@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+
+  <h1>FOOD CALORI TABLE</h1>
+  <a href="{% url 'new_food' %}"><button>Add New Food</button></a>
+  <a href="{% url 'track' %}"><button>Track Calories</button></a>
+
+  <table class="table" width="80%">
+    <thead class="table-dark">
+      <tr>
+        <th>NAME</th>
+        <th>QUANTITY</th>
+        <th>PROTIEIN</th>
+        <th>CARBS</th>
+        <th>FAT</th>
+        <th>VITAMINS</th>
+        <th>IMAGE</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in data %}
+      <tr>
+        <td>{{i.name}}</td>
+        <td>{{i.quantity}}</td>
+        <td>{{i.protein}}</td>
+        <td>{{i.carbs}}</td>
+        <td>{{i.fat}}</td>
+        <td>{{i.vitamins}}</td>
+        {% if i.img %}
+        <td><img src="{{i.img.url}}" alt="Image not available" height="50px" width="100px"></td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% endblock %}

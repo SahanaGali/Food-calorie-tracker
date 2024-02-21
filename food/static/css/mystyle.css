@@ -1,0 +1,9 @@
+body{
+    background-image: url('../images/food2.jpeg');
+    background-repeat: no-repeat;
+    background-attachment:scroll;
+    background-size: cover;
+    backdrop-filter: blur(4px); 
+    /* backface-visibility:  hidden; */
+}
+
